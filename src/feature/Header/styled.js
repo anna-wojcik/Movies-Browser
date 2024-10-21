@@ -3,6 +3,11 @@ import styled from "styled-components";
 export const StyledHeader = styled.header`
     background: ${({ theme }) => theme.color.woodSmoke};
     color: ${({ theme }) => theme.color.white};
+`;
+
+export const WrapperPrimary = styled.div`
+    max-width: 1368px;
+    margin: 0px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,18 +22,24 @@ export const StyledHeader = styled.header`
     }
 `;
 
-export const WrapperPrimary = styled.div`
+export const List = styled.ul`
     display: flex;
-    align-items: center;
+    list-style-type: none;
+    width: 100%;
+    gap: 16px;
+    padding: 0;
+    margin: 0;
 
     @media(max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
-        display: grid;
-        grid-template-columns: 33% 33% 33%;
+        gap: 12px;
     }
+`;
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-        display: grid;
-        grid-template-columns: 50% 50%;
+export const Item = styled.li`
+    @media(max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+        &:first-child {
+            margin-right: auto;
+        }
     }
 `;
 
@@ -36,8 +47,11 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: center;
     gap: 12px;
+    height: 100%;
+    margin-right: 80px;
 
     @media(max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+        margin-right: 0;
         gap: 8px;
     }
 `;
@@ -53,28 +67,9 @@ export const Title = styled.h1`
     font-size: 24px;
     font-weight: 500;
     margin: 0;
+    white-space: nowrap;
 
     @media(max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
         font-size: 13px;
-    }
-`;
-
-export const Navigation = styled.nav`
-    margin: 0 0 0 80px;
-    @media(max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
-        margin: 0;
-    }
-`;
-
-export const NavigationList = styled.ul`
-    display: flex;
-    list-style-type: none;
-    justify-content: flex-end;
-    gap: 16px;
-    padding: 0;
-    margin: 0;
-
-    @media(max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
-        gap: 12px;
     }
 `;

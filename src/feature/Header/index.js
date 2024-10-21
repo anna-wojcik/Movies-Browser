@@ -1,4 +1,4 @@
-import { StyledHeader, WrapperPrimary, Wrapper, Title, Image, Navigation, NavigationList } from "./styled";
+import { StyledHeader, WrapperPrimary, Wrapper, Title, Image, List, Item } from "./styled";
 import Button from "./Button";
 import Search from "./Search";
 import videoIcon from "../../images/videoIcon.png";
@@ -7,22 +7,24 @@ export const Header = () => {
     return (
         <StyledHeader>
             <WrapperPrimary>
-                <Wrapper>
-                    <Image src={videoIcon} alt="video icon" />
-                    <Title>Movies Browser</Title>
-                </Wrapper>
-                <Navigation>
-                    <NavigationList>
-                        <li>
+                <nav>
+                    <List>
+                        <Item>
+                            <Wrapper>
+                                <Image src={videoIcon} alt="video icon" />
+                                <Title>Movies Browser</Title>
+                            </Wrapper>
+                        </Item>
+                        <Item>
                             <Button content="Movies" />
-                        </li>
-                        <li>
+                        </Item>
+                        <Item>
                             <Button content="People" />
-                        </li>
-                    </NavigationList>
-                </Navigation>
+                        </Item>
+                    </List>
+                </nav>
+                <Search />
             </WrapperPrimary>
-            <Search />
         </StyledHeader>
     );
 };
