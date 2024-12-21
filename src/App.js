@@ -1,5 +1,5 @@
 import Section from "./common/Section";
-import Header from "./feature/Header";
+import Header from "./common/Header";
 import Movies from "./feature/MoviesList";
 import People from "./feature/PeopleList";
 
